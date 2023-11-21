@@ -1,0 +1,23 @@
+import { useAuth } from "../../../providers/AuthProvider"
+import FadeIn from "../../FadeIn"
+import Layout from "../../Layout"
+import InputEmail from "./InputEmail"
+import SentRestEmail from "./SentRestEmail"
+
+const ForgotPassPage = () => {
+  const { curStep, STEPS } = useAuth()
+
+  return (
+    <Layout type="full">
+      <FadeIn
+        className="pt-[60px] h-full
+              flex flex-col"
+      >
+        {curStep === STEPS.INPUT_EMAIL && <InputEmail />}
+        {curStep === STEPS.SENT_REST_EMAIL && <SentRestEmail />}
+      </FadeIn>
+    </Layout>
+  )
+}
+
+export default ForgotPassPage
