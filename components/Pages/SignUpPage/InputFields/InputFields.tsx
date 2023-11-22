@@ -7,12 +7,26 @@ import { useUserProvider } from "../../../../providers/UserProvider"
 
 const InputFields = () => {
   const [loading, setLoading] = useState(false)
-  const { userName, userPassword, setUserName, setUserPassword, login } = useUserProvider()
+  const {
+    userName,
+    userPassword,
+    setUserName,
+    setUserPassword,
+    userEmail,
+    setUserEmail,
+    firstName,
+    setFirstName,
+    lastName,
+    setLastName,
+    phoneNumber,
+    setPhoneNumber,
+    register,
+  } = useUserProvider()
 
   const submitInformation = async () => {
     setLoading(true)
 
-    await login()
+    await register()
 
     setLoading(false)
   }
@@ -25,7 +39,18 @@ const InputFields = () => {
       validationSchema={validation}
       className="w-full flex flex-col gap-y-[20px] mt-[30px]"
     >
-      <div className="flex flex-col">
+      <div
+        className="flex flex-col grid-cols-2 grid
+      gap-x-[30px]"
+      >
+        <TextInput
+          label="Email Address"
+          value={userEmail}
+          onChange={setUserEmail}
+          placeholder="Enter your email"
+          id="useremail"
+          hookToForm
+        />
         <TextInput
           label="User Name"
           value={userName}
@@ -35,7 +60,10 @@ const InputFields = () => {
           hookToForm
         />
       </div>
-      <div className="flex flex-col">
+      <div
+        className="flex flex-col grid-cols-2 grid
+      gap-x-[30px]"
+      >
         <TextInput
           label="Password"
           value={userPassword}
@@ -44,10 +72,39 @@ const InputFields = () => {
           id="userpass"
           hookToForm
         />
+        <TextInput
+          label="First Name"
+          value={firstName}
+          onChange={setFirstName}
+          placeholder="Enter your first name"
+          id="firstname"
+          hookToForm
+        />
+      </div>
+      <div
+        className="flex flex-col grid-cols-2 grid
+      gap-x-[30px]"
+      >
+        <TextInput
+          label="Last Name"
+          value={lastName}
+          onChange={setLastName}
+          placeholder="Enter your last name"
+          id="lastname"
+          hookToForm
+        />
+        <TextInput
+          label="Phone Number"
+          value={phoneNumber}
+          onChange={setPhoneNumber}
+          placeholder="Enter your phone number"
+          id="phonenumber"
+          hookToForm
+        />
       </div>
       <div className="pt-[20px]">
         <Button
-          id="info_submit_btn"
+          id="register_btn"
           type="submit"
           className={`xl:h-[47px] lg:h-[37.6px] md:h-[28.2px] 
           w-full font-poppins_semibold
@@ -57,7 +114,7 @@ const InputFields = () => {
           md:text-[10.8px] lg:text-[14.4px] xl:text-[18px]`}
           disabled={loading}
         >
-          Login
+          Register
         </Button>
       </div>
     </Form>

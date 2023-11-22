@@ -2,6 +2,7 @@ import React, { createContext, useContext, useEffect, useMemo, useState } from "
 import { useLocalStorage } from "usehooks-ts"
 import userLogin from "../lib/fakestore/userLogin"
 import { useRouter } from "next/router"
+import userRegister from "../lib/fakestore/userRegister"
 
 const UserContext = createContext(null)
 
@@ -11,14 +12,29 @@ const UserProvider = ({ children }) => {
   const [token, setUserToken] = useLocalStorage<any>("userToken", "")
   const [userName, setUserName] = useState("")
   const [userPassword, setUserPassword] = useState("")
+  const [firstName, setFirstName] = useState("")
+  const [lastName, setLastName] = useState("")
+  const [userEmail, setUserEmail] = useState("")
+  const [phoneNumber, setPhoneNumber] = useState("")
 
   const login = async () => {
     const response = await userLogin(userName, userPassword)
-    if(response.err) {
-      return
-    }
-    setUserToken(token)
+    if(response.error) return
+
+    setUserToken(response)
     router.push('/home')
+  }
+
+  const register = async () => {
+      const response = await userRegister(userName, userPassword, userEmail, firstName, lastName, phoneNumber)
+
+      if(response.err) return
+
+      setUserId(response)
+
+      setUserName("")
+      setUserPassword("")
+      router.push('/signin')
   }
 
   useEffect(() => {
@@ -33,16 +49,34 @@ const UserProvider = ({ children }) => {
       userPassword,
       setUserPassword,
       userId,
-      login
+      login,
+      register,
+      userEmail,
+      setUserEmail,
+      firstName,
+      setFirstName,
+      lastName,
+      setLastName,
+      phoneNumber,
+      setPhoneNumber
     }),
     [
       token,
       userId,
       login,
+      register,
       userName,
       userPassword,
       setUserName,
-      setUserPassword
+      setUserPassword,
+      userEmail,
+      setUserEmail,
+      firstName,
+      setFirstName,
+      lastName,
+      setLastName,
+      phoneNumber,
+      setPhoneNumber
     ],
   )
 

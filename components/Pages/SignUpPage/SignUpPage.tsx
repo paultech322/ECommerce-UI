@@ -1,8 +1,8 @@
 import Layout from "../../Layout"
 import Content from "../../Layout/Content"
-import SignInForm from "./SignInForm"
+import SignUpForm from "./SignUpForm"
 
-const SignInPage = () => (
+const SignUpPage = () => (
   <Layout type="base">
     <div
       className={`dark:bg-[url('/images/Landing/Hero/d_invest_bg.png')]
@@ -25,7 +25,7 @@ const SignInPage = () => (
             </pre>
           </div>
           <div className="col-span-6">
-            <SignInForm />
+            <SignUpForm />
           </div>
         </div>
       </Content>
@@ -33,4 +33,4 @@ const SignInPage = () => (
   </Layout>
 )
 
-export default SignInPage
+export default SignUpPage

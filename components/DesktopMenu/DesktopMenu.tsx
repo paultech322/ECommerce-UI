@@ -3,9 +3,11 @@ import DesktopExplore from "../DesktopExplore"
 import Switch from "../../shared/Switch"
 import { useTheme } from "../../providers/ThemeProvider"
 import LoginButton from "../LoginButton"
+import { useUserProvider } from "../../providers/UserProvider"
 
 const DesktopMenu = () => {
   const { onChangeThemeConfig, themeMode } = useTheme()
+  const { token } = useUserProvider()
 
   const onToggle = () => {
     onChangeThemeConfig()
@@ -50,13 +52,15 @@ const DesktopMenu = () => {
           </p>
           <Switch id="theme-selector" onClick={onToggle} value={themeMode === "dark"} />
         </div>
-        <LoginButton
-          className={`border-[1px] border-[#484848] dark:border-white
+        {!token && (
+          <LoginButton
+            className={`border-[1px] border-[#484848] dark:border-white
           cursor-pointer !rounded-[0px] !text-[#484848] dark:!text-white
           md:text-[8.4px] lg:text-[11.2px] xl:text-[14px]
           lg:w-[100px] aspect-[10/3]
           md:w-[75px]`}
-        />
+          />
+        )}
       </div>
     </div>
   )

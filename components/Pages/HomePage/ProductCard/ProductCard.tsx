@@ -42,8 +42,10 @@ const ProductCard = ({ data }) => {
         >
           {data.title}
         </p>
-        <div className="flex-grow flex items-end justify-end w-full
-        gap-x-[10px]">
+        <div
+          className="flex-grow flex items-end justify-end w-full
+        gap-x-[10px]"
+        >
           <Button
             id="product-detail"
             className="cursor-pointer

@@ -37,9 +37,7 @@ const CartList = () => {
           className="relative z-[10] 
           md:pb-[120px] lg:pb-[160px] xl:pb-[200px]"
         >
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-y-[40px]" data-aos="fade-up">
-            
-          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-y-[40px]" data-aos="fade-up" />
         </Content>
       </FadeInWhenVisible>
     </div>

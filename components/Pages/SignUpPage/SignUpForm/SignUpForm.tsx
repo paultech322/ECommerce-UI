@@ -1,7 +1,7 @@
 import Link from "next/link"
 import InputFields from "../InputFields"
 
-const SignInForm = () => (
+const SignUpForm = () => (
   <div
     className="bg-white dark:bg-[#10181A]
         xl:px-[50px] xl:py-[40px]
@@ -16,19 +16,19 @@ const SignInForm = () => (
                 md:text-[19.2px] lg:text-[25.6px] xl:text-[32px]
                 leading-[120%]"
     >
-      Please enter your login information
+      Register to ECommerce UI
     </p>
     <InputFields />
     <p
       className="dark:text-white text-[#0F1012] text-center
             pt-[30px]"
     >
-      Do not have an account ?{" "}
-      <Link href="/signup">
-        <span className="text-[#b4dce3] underline cursor-pointer">Create an account</span>
+      Alreay have an account ?{" "}
+      <Link href="/signin">
+        <span className="text-[#b4dce3] underline cursor-pointer">Login</span>
       </Link>
     </p>
   </div>
 )
 
-export default SignInForm
+export default SignUpForm

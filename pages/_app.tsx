@@ -16,7 +16,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <UserProvider>
         <ProductProvider>
           <SessionProvider>
-              <Component {...pageProps} />
+            <Component {...pageProps} />
             <ToastContainer />
           </SessionProvider>
         </ProductProvider>
