@@ -1,5 +1,6 @@
 import axios from "axios"
 import { BACKEND_URL } from "../const"
+import { toast } from "react-toastify"
 
 const userLogin = async (username, password) => {
   try {
@@ -9,7 +10,8 @@ const userLogin = async (username, password) => {
     })
     return response.data
   } catch (err) {
-    return []
+    toast.error('Username Or Password is incorrect.')
+    return {error: err}
   }
 }
 

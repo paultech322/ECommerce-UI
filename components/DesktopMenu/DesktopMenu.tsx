@@ -51,18 +51,11 @@ const DesktopMenu = () => {
           <Switch id="theme-selector" onClick={onToggle} value={themeMode === "dark"} />
         </div>
         <LoginButton
-          className={`border-[1px] border-white
-          cursor-pointer rounded-[0px]
+          className={`border-[1px] border-[#484848] dark:border-white
+          cursor-pointer !rounded-[0px] !text-[#484848] dark:!text-white
           md:text-[8.4px] lg:text-[11.2px] xl:text-[14px]
           lg:w-[100px] aspect-[10/3]
           md:w-[75px]`}
-        />
-        <LoginButton
-          className={`border-[1px] border-white
-          cursor-pointer rounded-[0px]
-          md:text-[8.4px] lg:text-[11.2px] xl:text-[14px]
-          lg:w-[100px] aspect-[10/3]
-          md:w-[94.8px]`}
         />
       </div>
     </div>

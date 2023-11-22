@@ -1,18 +1,24 @@
 import React, { createContext, useContext, useEffect, useMemo, useState } from "react"
 import { useLocalStorage } from "usehooks-ts"
 import userLogin from "../lib/fakestore/userLogin"
+import { useRouter } from "next/router"
 
 const UserContext = createContext(null)
 
 const UserProvider = ({ children }) => {
+  const router = useRouter()
   const [userId, setUserId] = useLocalStorage<any>("userId", "")
   const [token, setUserToken] = useLocalStorage<any>("userToken", "")
   const [userName, setUserName] = useState("")
   const [userPassword, setUserPassword] = useState("")
 
   const login = async () => {
-    const token = await userLogin(userName, userPassword)
+    const response = await userLogin(userName, userPassword)
+    if(response.err) {
+      return
+    }
     setUserToken(token)
+    router.push('/home')
   }
 
   useEffect(() => {
