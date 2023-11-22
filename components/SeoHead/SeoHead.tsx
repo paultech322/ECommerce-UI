@@ -11,8 +11,8 @@ function SeoHead(props: any) {
       <meta property="og:image" content={image} />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:description" content={description} />
-      <meta name="twitter:site" content="SESSION" />
-      <meta name="twitter:url" content="https://session-pied.vercel.app/" />
+      <meta name="twitter:site" content="Financial Verse" />
+      <meta name="twitter:url" content="https://financialverse.io/" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:image" content={image} />
       <link rel="icon" href={image} />

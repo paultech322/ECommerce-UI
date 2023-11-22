@@ -1,9 +1,5 @@
-import AuthProvider from "../providers/AuthProvider"
-import SignInPage from "../components/Pages/SignInPage"
+import LandingPage from "../components/Pages/LandingPage"
 
-const Landing = () => (
-  <AuthProvider>
-    <SignInPage />
-  </AuthProvider>
-)
+const Landing = () => <LandingPage />
+
 export default Landing

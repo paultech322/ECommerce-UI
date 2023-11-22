@@ -16,11 +16,15 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        urwgeometric: ["URWGeometric", "sans-serif"],
-        urwgeometric_light: ["URWGeometric Light", "sans-serif"],
-        urwgeometric_medium: ["URWGeometric Medium", "sans-serif"],
-        urwgeometric_semibold: ["URWGeometric SemiBold", "sans-serif"],
-        urwgeometric_bold: ["URWGeometric Bold", "sans-serif"],
+        woodfordbourne_bold: ["Woodford Bourne Bold", "sans-serif"],
+        woodfordbourne: ["Woodford Bourne Regular", "sans-serif"],
+        woodfordbourne_medium: ["Woodford Bourne Medium", "sans-serif"],
+        woodfordbourne_semibold: ["Woodford Bourne SemiBold", "sans-serif"],
+        poppins: ["Poppins", "sans-serif"],
+        poppins_light: ["Poppins Light", "sans-serif"],
+        poppins_medium: ["Poppins Medium", "sans-serif"],
+        poppins_semibold: ["Poppins SemiBold", "sans-serif"],
+        poppins_bold: ["Poppins Bold", "sans-serif"],
       },
       screens: {
         ios : '320px',
@@ -29,7 +33,9 @@ module.exports = {
         sm: "640px",
         md: "768px",
         lg: "1024px",
-        xl: "1280px"
+        xl: "1280px",
+        "2xl":'1448px',
+        "3xl": "1920px",
       },
     },
   },

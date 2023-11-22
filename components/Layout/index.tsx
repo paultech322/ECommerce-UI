@@ -1,12 +1,12 @@
 import BaseLayout from "./BaseLayout"
 import FullLayout from "./FullLayout"
-import MobileLayout from "./MobileLayout"
+import RowLayout from "./RowLayout"
 import { ILayout } from "./types"
 
 const layoutContainers = {
-  full: FullLayout,
   base: BaseLayout,
-  mobile: MobileLayout,
+  full: FullLayout,
+  row: RowLayout,
 }
 
 interface ILayoutFactory extends ILayout {

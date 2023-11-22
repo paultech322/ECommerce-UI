@@ -19,7 +19,6 @@ const Button: FC<ButtonProps> = ({
   pulseColor,
   className,
   onClick,
-  disabled,
   ...rest
 }) => {
   const elementRef = useRef()
@@ -39,13 +38,10 @@ const Button: FC<ButtonProps> = ({
       type="button"
       className={`transition duration-[300ms] 
           rounded-[30px] text-[white]
-          relative 
+          relative
           overflow-hidden
-          bg-gradient-[270deg] bg-gradient-to-r from-[#A1EA04] to-[#DAEB02] from-[-0.02%] to-[100.01%] shadow-[0px_0px_40px_0px_#a1ea0466]
-          ${className || ""}
-          ${disabled ? "cursor-not-allowed" : ""}`}
+          ${className || ""}`}
       onClick={onClick}
-      disabled={disabled}
       {...rest}
     >
       <div
@@ -60,9 +56,9 @@ const Button: FC<ButtonProps> = ({
       <div
         ref={(refP as unknown as LegacyRef<HTMLDivElement>) || elementRef}
         className="
-        z-[6] w-full relative
-        flex items-center justify-center
-        gap-[10px]"
+      z-[3] w-full
+      flex items-center justify-center
+      gap-[10px]"
       >
         {children}
       </div>

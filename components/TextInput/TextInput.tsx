@@ -1,82 +1,80 @@
 import { FC } from "react"
+import TextArea from "../../shared/TextArea"
 import Input from "../../shared/Input"
-import TextArea from "../../shared/TextArea/TextArea"
 
 interface TextInputProps {
   label: string
-  id: string
-  value: any
   onChange: any
-  name: string
+  value: string
   placeholder: string
-  type: "text" | "password" | "url" | "number"
-  classNameError?: string
-  variant?: "single" | "multiple"
-  infoText?: string
+  id: string
+  className?: string
+  type?: "single" | "multiple"
+  hookToForm?: boolean
 }
+
 const TextInput: FC<TextInputProps> = ({
   label,
-  value,
   onChange,
-  id,
-  name,
+  value,
   placeholder,
-  type = "text",
-  classNameError = "",
-  variant = "single",
-  infoText = "",
+  id,
+  className,
+  type = "single",
+  hookToForm = false,
 }) => (
-  <div className="w-full">
+  <div
+    className={`flex flex-col gap-[5px] ${className}
+    font-poppins
+    xl:text-[16px] lg:text-[12.8px] md:text-[9.6px]
+    outline-none`}
+  >
     <p
-      className="text-[#d2d2d2]
-            pl-[20px] pb-[8px]
-            font-urwgeometric"
+      className="font-poppins_medium
+            md:text-[12px] lg:text-[16px] xl:text-[20px]
+            text-[#484848] dark:text-white"
     >
       {label}
     </p>
-    {variant === "single" ? (
+    {type === "single" ? (
       <Input
         id={id}
-        name={name}
+        name={id}
         value={value}
-        type={type}
         onChange={(e) => onChange(e.target.value)}
-        containerClassName="w-full h-[48px]
-                border-l-[1px] border-l-[#d2d2d20f]
-                border-r-[1px] border-r-[#d2d2d20f]
-                border-b-[2px] border-b-[#d2d2d20f]
-                shadow-[12px_12px_32px_0px_#15151499,-12px_-12px_32px_0px_#40403b33]
-                backdrop-blur-[12px]
-                bg-[#d2d2d20f]"
-        className="outline-none
-                text-[#8c8c8c]
-                font-urwgeometric
-                focus:border-none 
-                focus:ring-0
-                placeholder:text-[14px]
-                placeholder:text-[#8c8c8c]
-                px-[30px]"
+        className="dark:bg-[#1A2629]
+            outline-none
+            xl:h-[47px] lg:h-[37.6px] md:h-[28.2px] !w-full
+            border border-[#BEBEBE]
+            text-[#484848] dark:text-white
+            focus:border-[#54B3C3] focus:!ring focus:!ring-[#54B3C3] focus:!ring-opacity-0
+            xl:placeholder:text-[16px]
+            lg:placeholder:text-[12.8px]
+            md:placeholder:text-[9.6px]
+            placeholder:text-[#BEBEBE]
+            rounded-md"
         placeholder={placeholder}
-        classNameError={`text-[#F3436D] font-urwgeometric_medium
-      text-[10px] ${classNameError}`}
-        infoText={infoText}
-        hookToForm
+        hookToForm={hookToForm}
       />
     ) : (
       <TextArea
         id={id}
-        name={name}
+        name={id}
         value={value}
         onChange={(e) => onChange(e.target.value)}
+        className="!w-full dark:bg-[#1A2629]
+                outline-none
+                rounded-md
+                text-[#484848] dark:text-white
+                xl:placeholder:text-[16px]
+                lg:placeholder:text-[12.8px]
+                md:placeholder:text-[9.6px]
+                placeholder:text-[#BEBEBE]
+                focus:border-[#54B3C3] focus:!ring focus:!ring-[#54B3C3] focus:!ring-opacity-0
+                border border-[#BEBEBE]"
+        placeholder={placeholder}
         rows={5}
-        containerClassName="border-l-[1px] border-l-[#d2d2d20f]
-        border-r-[1px] border-r-[#d2d2d20f]
-        border-b-[2px] border-b-[#d2d2d20f]
-        !bg-[#d2d2d20f]"
-        placeholder="Describe your project. What are you planning on using the studio for? Do you need any specific equipment? Let us know..."
-        classNameError={`text-[#F3436D] font-urwgeometric_medium
-        text-[10px] ${classNameError}`}
-        hookToForm
+        hookToForm={hookToForm}
       />
     )}
   </div>

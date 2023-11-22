@@ -1,40 +1,33 @@
 import React from "react"
 import { ILayout } from "./types"
+import Header from "../Header"
+import Footer from "../Footer"
 import SeoHead from "../SeoHead"
-import StudioHeader from "../Header/StudioHeader"
 
-const FullLayout = ({ children }: ILayout) => (
-  <div
-    className="w-screen min-h-screen
-      relative
-      bg-[url('/images/Layout/d_bg.png')]
-      bg-cover bg-[100%_auto]
-      bg-[bottom_right]
-      overflow-hidden
-      flex"
-  >
-    <SeoHead
-      title="SESSION"
-      description="Book your next studio session today"
-      image="/images/seo_logo.png"
-    />
+function FullLayout({ children }: ILayout) {
+  return (
     <div
-      className="w-[640px] h-screen
-      bg-[#1A1A18]
-      flex flex-col px-[60px] py-[5vh]
-      bg-gradient-to-b bg-gradient-[180deg]
-      from-[#a1ea0400] via-[#a1ea0405] to-[#a1ea041a]
-      from-0% via-75% to-100%"
+      className="w-screen min-h-screen
+      relative
+      flex flex-col items-center
+      bg-[url('/images/mobile_background.png')]
+      md:bg-[url('/images/background.png')]
+      bg-white
+      bg-cover
+      bg-[top_center]
+      bg-[100%_auto]
+      overflow-x-hidden"
     >
-      <StudioHeader />
-      <div
-        className="flex-grow pt-[3vh] h-full
-        flex flex-col"
-      >
-        {children}
-      </div>
+      <Header type="base" />
+      <SeoHead
+        title="Financial Verse"
+        description="Discover a new era of Web3 investing with Financial Verse. Gain access to live trading lessons, top traders, premium investment insights, and educational videos. Revolutionize your investment journey with value, utility, and practicality. Start maximizing the potential of your Web 3 tokens today."
+        image="/images/seo_logo.png"
+      />
+      {children}
+      <Footer />
     </div>
-  </div>
-)
+  )
+}
 
 export default FullLayout

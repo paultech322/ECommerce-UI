@@ -1,35 +1,32 @@
 import "../styles/globals.css"
 import "@rainbow-me/rainbowkit/styles.css"
 import "react-toastify/dist/ReactToastify.css"
-import "@amir04lm26/react-modern-calendar-date-picker/lib/DatePicker.css"
+
+import { useEffect } from "react"
 import type { AppProps } from "next/app"
 import { RainbowKitProvider, getDefaultWallets, connectorsForWallets } from "@rainbow-me/rainbowkit"
 import { configureChains, createConfig, WagmiConfig } from "wagmi"
-import {
-  base,
-  baseGoerli,
-  goerli,
-  mainnet,
-  optimism,
-  optimismGoerli,
-  zora,
-  zoraTestnet,
-} from "@wagmi/core/chains"
+import { goerli, mainnet } from "@wagmi/core/chains"
 import { ToastContainer } from "react-toastify"
 import { SessionProvider } from "next-auth/react"
 import * as React from "react"
-import { Analytics } from "@vercel/analytics/react"
 import { alchemyProvider } from "wagmi/providers/alchemy"
 import { publicProvider } from "wagmi/providers/public"
+import AOS from "aos"
+import "aos/dist/aos.css"
+import { type PrivyClientConfig, PrivyProvider } from "@privy-io/react-auth"
 
-const myChains = [mainnet, zora, optimism, base, goerli, zoraTestnet, optimismGoerli, baseGoerli]
+import { ThemeProvider } from "../providers/ThemeProvider"
+import UserProvider from "../providers/UserProvider"
+
+const myChains = [process.env.NEXT_PUBLIC_TESTNET ? goerli : mainnet]
 const { chains, publicClient, webSocketPublicClient } = configureChains(myChains, [
   alchemyProvider({ apiKey: process.env.NEXT_PUBLIC_ALCHEMY_API_KEY }),
   publicProvider(),
 ])
 
 const { wallets } = getDefaultWallets({
-  appName: "ZoraProtocolRewards",
+  appName: "Financial Verse",
   projectId: "68c5ce6a0bf63be0182de421f19951b8",
   chains,
 })
@@ -42,15 +39,42 @@ const wagmiConfig = createConfig({
   webSocketPublicClient,
 })
 
+const privyConfig: PrivyClientConfig = {
+  loginMethods: ["email", "google", "apple"],
+  appearance: {
+    theme: "dark",
+    accentColor: "#24AACB",
+    logo: "/images/Header/Desktop/logo.png",
+  },
+  embeddedWallets: {
+    createOnLogin: "all-users",
+  },
+  fiatOnRamp: {
+    useSandbox: true,
+  },
+}
+
 function MyApp({ Component, pageProps }: AppProps) {
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      once: false,
+    })
+  }, [])
+
   return (
     <WagmiConfig config={wagmiConfig}>
       <RainbowKitProvider modalSize="compact" chains={chains}>
-        <SessionProvider>
-          <Component {...pageProps} />
-          <ToastContainer />
-          <Analytics />
-        </SessionProvider>
+        <ThemeProvider>
+          <SessionProvider>
+            <PrivyProvider appId={process.env.NEXT_PUBLIC_PRIVY_APP_ID} config={privyConfig}>
+              <UserProvider>
+                <Component {...pageProps} />
+              </UserProvider>
+            </PrivyProvider>
+            <ToastContainer />
+          </SessionProvider>
+        </ThemeProvider>
       </RainbowKitProvider>
     </WagmiConfig>
   )

@@ -1,53 +1,47 @@
 import { FC, ReactNode, useState } from "react"
 import { motion } from "framer-motion"
-import { ArrowDownIcon, ArrowUpIcon } from "../Icons"
-import Media from "../Media"
 
-interface IAccordion {
+interface AccordionProps {
   className?: string
-  tabClassName?: string
+  questionClassName?: string
   contentClassname?: string
-  title: ReactNode
+  question: ReactNode
   content: ReactNode
-  tabNumber?: number
+  expandIcon: ReactNode
+  hideIcon: ReactNode
+  questionNumber?: number
 }
 
-const Accordion: FC<IAccordion> = ({
+const Accordion: FC<AccordionProps> = ({
   className,
-  tabNumber,
-  tabClassName,
+  questionNumber,
+  questionClassName,
   contentClassname,
-  title,
+  question,
   content,
+  expandIcon,
+  hideIcon,
 }) => {
   const [isExpaned, setIsExpanded] = useState(false)
+
   return (
     <div
-      className={`rounded-[24px]
-      overflow-hidden
-      bg-[#d2d2d20f] p-[20px]
-      ${className || ""} 
+      className={`${className || ""} 
       transition duration-[300ms]`}
     >
       <button
         className={`
           w-full 
           flex justify-between items-center 
-          ${tabClassName}`}
+          ${questionClassName} ${!isExpaned ? "!border-none" : ""}`}
         type="button"
         onClick={() => setIsExpanded(!isExpaned)}
       >
         <div className="flex gap-x-[5px]">
-          {tabNumber && <p>{tabNumber}.</p>}
-          <p>{title}</p>
+          {questionNumber && <p>{questionNumber}.</p>}
+          <p>{question}</p>
         </div>
-        <div>
-          {isExpaned ? (
-            <Media type="image" link={ArrowDownIcon} containerClasses="w-[24px] aspect-[1/1]" />
-          ) : (
-            <Media type="image" link={ArrowUpIcon} containerClasses="w-[24px] aspect-[1/1]" />
-          )}
-        </div>
+        <div>{isExpaned ? hideIcon : expandIcon}</div>
       </button>
       <motion.div
         animate={{

@@ -1,5 +1,5 @@
 import { joiResolver } from "@hookform/resolvers/joi"
-import React, { FormEvent, ReactNode, useEffect } from "react"
+import React, { FormEvent, ReactNode } from "react"
 import { FormProvider, SubmitErrorHandler, useForm } from "react-hook-form"
 
 interface IForm {
@@ -12,7 +12,7 @@ interface IForm {
   validationSchema: any
 }
 
-const Form = ({
+function Form({
   id,
   onSubmit,
   validationSchema,
@@ -20,7 +20,7 @@ const Form = ({
   onError,
   className,
   initialValues,
-}: IForm) => {
+}: IForm) {
   const formMethods = useForm({
     resolver: joiResolver(validationSchema),
     defaultValues: initialValues,
