@@ -11,7 +11,7 @@ const DesktopExplore = () => {
   const isFundPage = pathname.includes("/fund")
   const isDamianPage = pathname.includes("/damian")
   const isWhyVersePage = pathname.includes("/whyverse")
-  const isHowFundPage = pathname.includes("/howfund")
+  const isHomePage = pathname.includes("/home")
   const isFAQPage = pathname.includes("/faq")
   const isContactUsPage = pathname.includes("/contactus")
 
@@ -19,7 +19,7 @@ const DesktopExplore = () => {
     if (isFundPage) return "The Fund"
     if (isDamianPage) return "Damian"
     if (isWhyVersePage) return "Why Financial Verse"
-    if (isHowFundPage) return "How the Fund Works"
+    if (isHomePage) return "Home"
     if (isFAQPage) return "FAQ"
     if (isContactUsPage) return "Contact Us"
 

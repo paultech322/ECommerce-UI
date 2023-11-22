@@ -1,17 +1,10 @@
 import Link from "next/link"
-import { useRouter } from "next/router"
-import LoginButton from "../LoginButton"
 import Media from "../../shared/Media"
 import DesktopExplore from "../DesktopExplore"
 import Switch from "../../shared/Switch"
 import { useTheme } from "../../providers/ThemeProvider"
-import Button from "../../shared/Button"
 
 const DesktopMenu = () => {
-  const router = useRouter()
-
-  const isFundPage = router.pathname.includes("/howfund") || router.pathname.includes("/fund")
-
   const { onChangeThemeConfig, themeMode } = useTheme()
 
   const onToggle = () => {
@@ -53,33 +46,6 @@ const DesktopMenu = () => {
       </div>
       <DesktopExplore />
       <div className="flex justify-center gap-x-[40px] items-center">
-        <LoginButton
-          className={`border-[1px] border-white
-          cursor-pointer
-          !rounded-full
-          ${
-            isFundPage
-              ? "!text-[#484848] !w-fit dark:border-none dark:!text-white"
-              : "!bg-[#54B3C3]"
-          }
-          md:text-[10.8px] lg:text-[14.4px] xl:text-[18px]
-          lg:w-[156px] lg:h-[47px]
-          md:w-[94.8px] md:h-[28.8px]`}
-        />
-        {isFundPage && (
-          <Button
-            id="invest_btn"
-            className={`border-[1px] border-white
-          cursor-pointer
-          !rounded-full
-          !bg-[#54B3C3]
-          lg:w-[156px] lg:h-[47px]
-          md:w-[94.8px] md:h-[28.8px]`}
-            onClick={() => router.push("/invest")}
-          >
-            Invest
-          </Button>
-        )}
         <div className="flex justify-center gap-x-[5px]">
           <p
             className="font-poppins_medium text-[18px] 
