@@ -4,16 +4,12 @@
     "label": "Fund"
   },
   {
-    "link": "/howfund",
-    "label": "How the Fund Works"
+    "link": "/home",
+    "label": "Home"
   },
   {
-    "link": "/damian",
-    "label": "Damian"
-  },
-  {
-    "link": "/whyverse",
-    "label": "Why Financial Verse"
+    "link": "/cart",
+    "label": "Cart"
   },
   {
     "link": "/faq",
