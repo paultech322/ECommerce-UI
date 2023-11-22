@@ -6,11 +6,8 @@ const HeroModule = () => {
 
   return (
     <div
-      className="w-screen relative
-      bg-[url('/images/WhyVerse/m_bg.png')] md:bg-[url('/images/WhyVerse/d_bg.png')]
-      bg-cover
-      bg-no-repeat
-      bg-center
+      className="w-screen
+      bg-center pt-[64px] md:pt-0 md:mt-[98px]
       flex justify-center"
     >
       <div
@@ -63,7 +60,7 @@ const HeroModule = () => {
             text-white leading-[120%]"
             data-aos="fade-up"
           >
-            {isMobile ? `Why Financial Verse` : `Why Financial\nVerse`}
+            {isMobile ? `Why Financial Verse` : `My Carts`}
           </pre>
           <pre
             className="font-poppins

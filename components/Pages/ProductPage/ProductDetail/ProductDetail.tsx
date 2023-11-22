@@ -1,6 +1,7 @@
 import FadeInWhenVisible from "../../../FadeInWhenVisible"
 import Media from "../../../../shared/Media"
 import { useProduct } from "../../../../providers/ProductProvider"
+import Button from "../../../../shared/Button"
 
 const ProductDetail = () => {
   const { productDetail } = useProduct()
@@ -60,6 +61,16 @@ const ProductDetail = () => {
           <span className="text-[#73b3c2] font-poppins_bold">Description: </span>{" "}
           {productDetail?.description}
         </p>
+        <Button
+          id="product-detail"
+          className="cursor-pointer
+          font-poppins_semibold mt-[20px]
+          md:text-[14px]
+          !rounded-full bg-[#54B3C3]
+          lg:w-[120px] aspect-[120/35] md:w-[90px]"
+        >
+          Add Cart
+        </Button>
       </FadeInWhenVisible>
       <FadeInWhenVisible
         className="flex justify-center md:hidden

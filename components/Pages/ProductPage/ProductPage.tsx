@@ -2,11 +2,11 @@ import Layout from "../../Layout"
 import HeroModule from "./HeroModule"
 import AboutModule from "./AboutModule"
 
-const DamianPage = () => (
+const ProductPage = () => (
   <Layout type="base">
     <HeroModule />
     <AboutModule />
   </Layout>
 )
 
-export default DamianPage
+export default ProductPage

@@ -1,12 +1,10 @@
 import Media from "../../../../shared/Media"
 import FadeInWhenVisible from "../../../FadeInWhenVisible"
 import Content from "../../../Layout/Content"
-import BenefitCard from "../../BenefitCard"
 import WhyVerseDetail from "./WhyVerseDetail"
-import benefitCards from "../../benefit.json"
 import useIsMobile from "../../../../hooks/useIsMobile"
 
-const BenefitModule = () => {
+const CartList = () => {
   const isMobile = useIsMobile()
 
   return (
@@ -40,18 +38,7 @@ const BenefitModule = () => {
           md:pb-[120px] lg:pb-[160px] xl:pb-[200px]"
         >
           <div className="grid grid-cols-1 md:grid-cols-3 gap-y-[40px]" data-aos="fade-up">
-            {benefitCards.map((card, i) => (
-              <BenefitCard
-                // eslint-disable-next-line react/no-array-index-key
-                key={i}
-                title={card.title}
-                link={card.link}
-                darkLink={card.darkLink}
-                darkBlurLink={card.darkBlurLink}
-                blurLink={card.blurLink}
-                content={isMobile ? card.mobile_content : card.content}
-              />
-            ))}
+            
           </div>
         </Content>
       </FadeInWhenVisible>
@@ -59,4 +46,4 @@ const BenefitModule = () => {
   )
 }
 
-export default BenefitModule
+export default CartList

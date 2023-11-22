@@ -13,14 +13,14 @@ import ProductProvider from "../providers/ProductProvider"
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider>
-      <ProductProvider>
-        <SessionProvider>
-          <UserProvider>
-            <Component {...pageProps} />
-          </UserProvider>
-          <ToastContainer />
-        </SessionProvider>
-      </ProductProvider>
+      <UserProvider>
+        <ProductProvider>
+          <SessionProvider>
+              <Component {...pageProps} />
+            <ToastContainer />
+          </SessionProvider>
+        </ProductProvider>
+      </UserProvider>
     </ThemeProvider>
   )
 }

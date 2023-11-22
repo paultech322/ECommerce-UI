@@ -42,12 +42,24 @@ const ProductCard = ({ data }) => {
         >
           {data.title}
         </p>
-        <div className="flex-grow flex items-end justify-end w-full">
+        <div className="flex-grow flex items-end justify-end w-full
+        gap-x-[10px]">
           <Button
             id="product-detail"
             className="cursor-pointer
             font-poppins_semibold
-            text-[6.5px] samsungS8:text-[7.3px] xs:text-[8px] md:text-[18px]
+            md:text-[14px]
+            !rounded-full bg-[#54B3C3]
+            lg:w-[120px] aspect-[120/35] md:w-[90px]"
+            onClick={() => router.push(`/product/${data.id}`)}
+          >
+            Add to cart
+          </Button>
+          <Button
+            id="product-detail"
+            className="cursor-pointer
+            font-poppins_semibold
+            md:text-[14px]
             !rounded-full bg-[#54B3C3]
             lg:w-[120px] aspect-[120/35] md:w-[90px]"
             onClick={() => router.push(`/product/${data.id}`)}

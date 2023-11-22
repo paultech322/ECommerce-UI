@@ -1,11 +1,11 @@
 import Layout from "../../Layout"
 import HeroModule from "./HeroModule"
-import BenefitModule from "./BenefitModule"
+import CartList from "./CartList"
 
 const CartPage = () => (
   <Layout type="base">
     <HeroModule />
-    <BenefitModule />
+    <CartList />
   </Layout>
 )
 

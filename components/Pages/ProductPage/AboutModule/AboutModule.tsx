@@ -31,7 +31,8 @@ const AboutModule = () => {
       </div>
       <div
         className="md:w-[768px] lg:w-[1024px] xl:w-[1280px] w-full
-              xl:py-[70px] lg:py-[56px] md:py-[42px]
+              xl:pt-[70px] lg:pt-[56px] md:pt-[42px]
+              xl:pb-[40px] lg:pb-[32px] md:pb-[24px]
               xl:px-[80px] lg:px-[64px] md:px-[48px]
               pt-[25px] px-[20px]
               pb-[205px] samsungS8:pb-[230px] xs:pb-[280px]
