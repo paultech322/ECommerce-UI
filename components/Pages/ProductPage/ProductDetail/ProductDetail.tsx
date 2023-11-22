@@ -4,7 +4,7 @@ import { useProduct } from "../../../../providers/ProductProvider"
 import Button from "../../../../shared/Button"
 
 const ProductDetail = () => {
-  const { productDetail } = useProduct()
+  const { productDetail, addCart } = useProduct()
 
   return (
     <>
@@ -68,6 +68,7 @@ const ProductDetail = () => {
           md:text-[14px]
           !rounded-full bg-[#54B3C3]
           lg:w-[120px] aspect-[120/35] md:w-[90px]"
+          onClick={addCart}
         >
           Add Cart
         </Button>

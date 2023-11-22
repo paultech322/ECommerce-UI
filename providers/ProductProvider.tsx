@@ -4,6 +4,7 @@ import { useRouter } from "next/router"
 import getProductData from "../lib/fakestore/getProductData"
 import { useUserProvider } from "./UserProvider"
 import getCartData from "../lib/fakestore/getCartData"
+import addNewCart from "../lib/fakestore/addNewCart"
 
 const ProductContext = createContext(null)
 
@@ -24,6 +25,19 @@ const ProductProvider = ({ children }) => {
     if(isProductPage) return id  
   }, [pathname, id])
 
+  const addCart = async () => {
+    const response = await addNewCart(userId, [...carts, {
+      quantity: 1,
+      productId: productDetail?.id
+    }])
+
+    if(response.error) return
+
+    router.push('/cart')
+  }
+
+  console.log("ZIAD", carts)
+  
   const getAllCartData = useCallback(async () => {
     setLoading(true)
     const response = await getCartData(userId)
@@ -64,7 +78,8 @@ const ProductProvider = ({ children }) => {
       productDetail,
       getAllCartData,
       carts,
-      loading
+      loading,
+      addCart
     }),
     [
       products,
@@ -72,7 +87,8 @@ const ProductProvider = ({ children }) => {
       getAllCartData,
       carts,
       productDetail,
-      loading
+      loading,
+      addCart
     ],
   )
 

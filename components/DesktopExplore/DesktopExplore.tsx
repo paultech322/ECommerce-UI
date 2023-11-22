@@ -8,22 +8,16 @@ import exploreList from "./data.json"
 const DesktopExplore = () => {
   const { pathname } = useRouter()
 
-  const isFundPage = pathname.includes("/fund")
   const isProductPage = pathname.includes("/product")
-  const isWhyVersePage = pathname.includes("/whyverse")
+  const isCartPage = pathname.includes("/cart")
   const isHomePage = pathname.includes("/home")
-  const isFAQPage = pathname.includes("/faq")
-  const isContactUsPage = pathname.includes("/contactus")
 
   const menuText = () => {
-    if (isFundPage) return "The Fund"
     if (isProductPage) return "Prodct Detail"
-    if (isWhyVersePage) return "Why Financial Verse"
+    if (isCartPage) return "Cart"
     if (isHomePage) return "Home"
-    if (isFAQPage) return "FAQ"
-    if (isContactUsPage) return "Contact Us"
 
-    return "Menu"
+    return "Home"
   }
 
   return (

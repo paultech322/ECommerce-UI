@@ -1,22 +1,10 @@
 [
   {
-    "link": "/fund",
-    "label": "Fund"
-  },
-  {
     "link": "/home",
     "label": "Home"
   },
   {
     "link": "/cart",
     "label": "Cart"
-  },
-  {
-    "link": "/faq",
-    "label": "FAQ"
-  },
-  {
-    "link": "/contactus",
-    "label": "Contact Us"
   }
 ]
