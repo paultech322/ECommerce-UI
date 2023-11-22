@@ -1,11 +1,11 @@
 import Layout from "../../Layout"
 import HeroModule from "./HeroModule"
-import TurnsModule from "./TurnsModule"
+import ProductList from "./ProductList"
 
 const HomePage = () => (
   <Layout type="base">
     <HeroModule />
-    <TurnsModule />
+    <ProductList />
   </Layout>
 )
 

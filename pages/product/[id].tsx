@@ -1,5 +1,5 @@
 import ProductPage from "../../components/Pages/ProductPage"
 
-const Damian = () => <ProductPage />
+const Product = () => <ProductPage />
 
-export default Damian
+export default Product

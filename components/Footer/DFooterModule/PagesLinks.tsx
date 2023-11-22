@@ -1,7 +1,7 @@
 import Link from "next/link"
 
 const PagesLinks = () => (
-  <div className="flex flex-col pl-[100px] col-span-4">
+  <div className="flex flex-col col-span-4">
     <p
       className="text-[#54B3C3] font-poppins_bold 
     md:text-[12px] lg:text-[16px] xl:text-[20px]

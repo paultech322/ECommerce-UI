@@ -1,10 +1,10 @@
 import Layout from "../../Layout"
-import DamianModule from "./DamianModule"
+import HeroModule from "./HeroModule"
 import AboutModule from "./AboutModule"
 
 const DamianPage = () => (
   <Layout type="base">
-    <DamianModule />
+    <HeroModule />
     <AboutModule />
   </Layout>
 )

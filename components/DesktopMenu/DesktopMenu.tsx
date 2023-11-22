@@ -64,7 +64,6 @@ const DesktopMenu = () => {
           lg:w-[100px] aspect-[10/3]
           md:w-[94.8px]`}
         />
-        
       </div>
     </div>
   )

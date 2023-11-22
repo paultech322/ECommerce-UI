@@ -7,12 +7,12 @@ const HeroModule = () => {
   return (
     <div
       className="w-screen
-      flex flex-col items-center 
-      pt-[64px] md:pt-0 md:mt-[98px]"
+          flex flex-col items-center
+          pt-[64px] md:pt-0 md:mt-[98px]"
     >
       <div
         className="w-screen relative
-              bg-[url('/images/HowFund/d_bg.png')]
+              bg-[url('/images/Damian/d_bg.png')]
               bg-cover
               bg-no-repeat
               bg-center
@@ -22,15 +22,15 @@ const HeroModule = () => {
           <>
             <Media
               type="image"
-              link="/images/HowFund/top_dot_bg.png"
-              blurLink="/images/HowFund/top_dot_bg.png"
+              link="/images/Damian/top_dot_bg.png"
+              blurLink="/images/Damian/top_dot_bg.png"
               containerClasses="w-[110px] h-[97px]
                   !absolute left-[0px] top-[-70px]"
             />
             <Media
               type="image"
-              link="/images/HowFund/bottom_dot_bg.png"
-              blurLink="/images/HowFund/bottom_dot_bg.png"
+              link="/images/Damian/bottom_dot_bg.png"
+              blurLink="/images/Damian/bottom_dot_bg.png"
               containerClasses="w-[56px] h-[109px]
                   right-0 bottom-[-60px] !absolute"
             />
@@ -39,11 +39,11 @@ const HeroModule = () => {
           <div className="absolute right-0 top-[5px]">
             <Media
               type="image"
-              link="/images/HowFund/d_top_dot.png"
-              blurLink="/images/HowFund/d_top_dot.png"
+              link="/images/Damian/d_top_dot.png"
+              blurLink="/images/Damian/d_top_dot.png"
               containerClasses="xl:w-[202px] xl:h-[478px]
-            lg:w-[161.6px] lg:h-[382.4px]
-            md:w-[121.2px] md:h-[286.8px]"
+          lg:w-[161.6px] lg:h-[382.4px]
+          md:w-[121.2px] md:h-[286.8px]"
             />
           </div>
         )}
@@ -53,15 +53,15 @@ const HeroModule = () => {
                   xl:pb-[300px] lg:pb-[240px] md:pb-[180px]
                   w-full px-[20px] pt-[50px] pb-[130px]"
         >
-          <pre
+          <p
             className="font-poppins_bold
-            text-[24px] samsungS8:text-[28px] xs:text-[30px]
+            text-[30px]
             xl:text-[64px] lg:text-[51.2px] md:text-[38.4px]
-            text-white leading-[120%]"
+            text-white leading-[100%]"
             data-aos="fade-up"
           >
-            {isMobile ? `How the Fund Works` : `FakeStore \nProducts`}
-          </pre>
+            Product Detail
+          </p>
           <pre
             className="font-poppins
             text-[12.5px] samsungS8:text-[14.5px] xs:text-[16px]
