@@ -1,8 +1,8 @@
 import Link from "next/link"
-import Media from "../../shared/Media"
 import DesktopExplore from "../DesktopExplore"
 import Switch from "../../shared/Switch"
 import { useTheme } from "../../providers/ThemeProvider"
+import LoginButton from "../LoginButton"
 
 const DesktopMenu = () => {
   const { onChangeThemeConfig, themeMode } = useTheme()
@@ -27,35 +27,44 @@ const DesktopMenu = () => {
       >
         <Link href="/">
           <div className="flex items-center gap-x-[10px]">
-            <Media
-              type="image"
-              link="/images/Header/Desktop/logo.svg"
-              blurLink="/images/Header/Desktop/logo.png"
-              containerClasses="w-[53px] h-[58px]"
-            />
             <p
               className="text-[30px]
               uppercase 
               text-[#73B3C2]
               font-poppins_bold"
             >
-              Financial <span className="text-[#B4DCE3]">Verse</span>
+              ECommerce <span className="text-[#B4DCE3]">UI</span>
             </p>
           </div>
         </Link>
       </div>
       <DesktopExplore />
-      <div className="flex justify-center gap-x-[40px] items-center">
+      <div className="flex justify-center gap-x-[20px] items-center">
         <div className="flex justify-center gap-x-[5px]">
           <p
-            className="font-poppins_medium text-[18px] 
+            className="font-poppins_medium md:text-[8.4px] lg:text-[11.2px] xl:text-[14px]
           text-[#484848] dark:text-[white]
           capitalize"
           >
-            {themeMode} Mode
+            {themeMode}
           </p>
           <Switch id="theme-selector" onClick={onToggle} value={themeMode === "dark"} />
         </div>
+        <LoginButton
+          className={`border-[1px] border-white
+          cursor-pointer rounded-[0px]
+          md:text-[8.4px] lg:text-[11.2px] xl:text-[14px]
+          lg:w-[100px] aspect-[10/3]
+          md:w-[75px]`}
+        />
+        <LoginButton
+          className={`border-[1px] border-white
+          cursor-pointer rounded-[0px]
+          md:text-[8.4px] lg:text-[11.2px] xl:text-[14px]
+          lg:w-[100px] aspect-[10/3]
+          md:w-[94.8px]`}
+        />
+        
       </div>
     </div>
   )

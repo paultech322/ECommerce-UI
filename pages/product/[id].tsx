@@ -1,5 +1,5 @@
-import DamianPage from "../../components/Pages/DamianPage"
+import ProductPage from "../../components/Pages/ProductPage"
 
-const Damian = () => <DamianPage />
+const Damian = () => <ProductPage />
 
 export default Damian

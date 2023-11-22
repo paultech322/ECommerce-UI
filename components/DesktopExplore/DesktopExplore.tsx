@@ -9,7 +9,7 @@ const DesktopExplore = () => {
   const { pathname } = useRouter()
 
   const isFundPage = pathname.includes("/fund")
-  const isDamianPage = pathname.includes("/damian")
+  const isProductPage = pathname.includes("/product")
   const isWhyVersePage = pathname.includes("/whyverse")
   const isHomePage = pathname.includes("/home")
   const isFAQPage = pathname.includes("/faq")
@@ -17,7 +17,7 @@ const DesktopExplore = () => {
 
   const menuText = () => {
     if (isFundPage) return "The Fund"
-    if (isDamianPage) return "Damian"
+    if (isProductPage) return "Prodct Detail"
     if (isWhyVersePage) return "Why Financial Verse"
     if (isHomePage) return "Home"
     if (isFAQPage) return "FAQ"

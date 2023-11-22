@@ -1,3 +1,3 @@
-import DamianPage from "./DamianPage"
+import ProductPage from "./ProductPage"
 
-export default DamianPage
+export default ProductPage
