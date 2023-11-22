@@ -1,7 +1,5 @@
-import InfoLinks from "./InfoLinks"
-import JoinForKit from "./JoinForKit"
 import PagesLinks from "./PagesLinks"
-import SocialButtons from "./SocialButtons"
+import AboutPlatform from "./AboutPlatform"
 
 const DFooterModule = () => (
   <div
@@ -11,13 +9,11 @@ const DFooterModule = () => (
   >
     <div className="md:w-[768px] lg:w-[1024px] xl:w-[1280px]">
       <div
-        className="grid grid-cols-9 border-b-[2px] border-b-white
+        className="grid grid-cols-8 border-b-[2px] border-b-white
         pb-[50px]"
       >
-        <SocialButtons />
+        <AboutPlatform />
         <PagesLinks />
-        <InfoLinks />
-        <JoinForKit />
       </div>
       <p
         className="font-poppins
@@ -25,7 +21,7 @@ const DFooterModule = () => (
         text-[#ffffffcc] text-center
         pt-[50px]"
       >
-        Copyright @FinancialVerse. All Rights Reserved.
+        Copyright @ECommerce UI. All Rights Reserved.
       </p>
     </div>
   </div>

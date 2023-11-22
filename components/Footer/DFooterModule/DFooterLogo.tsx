@@ -14,7 +14,7 @@ const DFooterLogo = () => (
               text-[#73B3C2]
               font-poppins_bold"
     >
-      Financial <span className="text-[#B4DCE3]">Verse</span>
+      ECommerce <span className="text-[#B4DCE3]">UI</span>
     </p>
   </div>
 )

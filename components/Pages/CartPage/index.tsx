@@ -1,3 +1,3 @@
-import WhyVersePage from "./WhyVersePage"
+import CartPage from "./CartPage"
 
-export default WhyVersePage
+export default CartPage
