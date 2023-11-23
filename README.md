@@ -1,3 +1,5 @@
+![image](https://github.com/brittneytech818/ECommerce-UI/assets/109102047/bf11f9ba-e210-4a11-bd0c-1a3d836cc0b9)
+
 ## Getting Started
 
 First, install packages with
