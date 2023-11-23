@@ -55,6 +55,7 @@ const DesktopExplore = () => {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -10 }}
                 transition={{ delay: 0.05 * (i + 1), duration: 0.1 }}
+                className="w-full"
               >
                 {item.label}
               </motion.div>

@@ -44,7 +44,7 @@ const DesktopMenu = () => {
       <div className="flex justify-center gap-x-[20px] items-center">
         <div className="flex justify-center gap-x-[5px]">
           <p
-            className="font-poppins_medium md:text-[8.4px] lg:text-[11.2px] xl:text-[14px]
+            className="font-poppins_medium text-[14px]
           text-[#484848] dark:text-[white]
           capitalize"
           >
