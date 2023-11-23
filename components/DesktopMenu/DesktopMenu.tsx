@@ -1,18 +1,13 @@
 import Link from "next/link"
-import { useRouter } from "next/router"
-import LoginButton from "../LoginButton"
-import Media from "../../shared/Media"
 import DesktopExplore from "../DesktopExplore"
 import Switch from "../../shared/Switch"
 import { useTheme } from "../../providers/ThemeProvider"
-import Button from "../../shared/Button"
+import LoginButton from "../LoginButton"
+import { useUserProvider } from "../../providers/UserProvider"
 
 const DesktopMenu = () => {
-  const router = useRouter()
-
-  const isFundPage = router.pathname.includes("/howfund") || router.pathname.includes("/fund")
-
   const { onChangeThemeConfig, themeMode } = useTheme()
+  const { token } = useUserProvider()
 
   const onToggle = () => {
     onChangeThemeConfig()
@@ -33,63 +28,39 @@ const DesktopMenu = () => {
       md:gap-x-[36px]"
       >
         <Link href="/">
-          <div className="flex items-center gap-x-[10px]">
-            <Media
-              type="image"
-              link="/images/Header/Desktop/logo.svg"
-              blurLink="/images/Header/Desktop/logo.png"
-              containerClasses="w-[53px] h-[58px]"
-            />
+          <div className="flex items-center gap-x-[10px] cursor-pointer">
             <p
               className="text-[30px]
               uppercase 
               text-[#73B3C2]
               font-poppins_bold"
             >
-              Financial <span className="text-[#B4DCE3]">Verse</span>
+              ECommerce <span className="text-[#B4DCE3]">UI</span>
             </p>
           </div>
         </Link>
       </div>
       <DesktopExplore />
-      <div className="flex justify-center gap-x-[40px] items-center">
-        <LoginButton
-          className={`border-[1px] border-white
-          cursor-pointer
-          !rounded-full
-          ${
-            isFundPage
-              ? "!text-[#484848] !w-fit dark:border-none dark:!text-white"
-              : "!bg-[#54B3C3]"
-          }
-          md:text-[10.8px] lg:text-[14.4px] xl:text-[18px]
-          lg:w-[156px] lg:h-[47px]
-          md:w-[94.8px] md:h-[28.8px]`}
-        />
-        {isFundPage && (
-          <Button
-            id="invest_btn"
-            className={`border-[1px] border-white
-          cursor-pointer
-          !rounded-full
-          !bg-[#54B3C3]
-          lg:w-[156px] lg:h-[47px]
-          md:w-[94.8px] md:h-[28.8px]`}
-            onClick={() => router.push("/invest")}
-          >
-            Invest
-          </Button>
-        )}
+      <div className="flex justify-center gap-x-[20px] items-center">
         <div className="flex justify-center gap-x-[5px]">
           <p
-            className="font-poppins_medium text-[18px] 
+            className="font-poppins_medium text-[14px]
           text-[#484848] dark:text-[white]
           capitalize"
           >
-            {themeMode} Mode
+            {themeMode}
           </p>
           <Switch id="theme-selector" onClick={onToggle} value={themeMode === "dark"} />
         </div>
+        {!token && (
+          <LoginButton
+            className={`border-[1px] border-[#484848] dark:border-white
+          cursor-pointer !rounded-[0px] !text-[#484848] dark:!text-white
+          md:text-[8.4px] lg:text-[11.2px] xl:text-[14px]
+          lg:w-[100px] aspect-[10/3]
+          md:w-[75px]`}
+          />
+        )}
       </div>
     </div>
   )

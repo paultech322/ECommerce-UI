@@ -15,8 +15,8 @@ function BaseLayout({ children }: ILayout) {
     >
       <Header type="base" />
       <SeoHead
-        title="Financial Verse"
-        description="Discover a new era of Web3 investing with Financial Verse. Gain access to live trading lessons, top traders, premium investment insights, and educational videos. Revolutionize your investment journey with value, utility, and practicality. Start maximizing the potential of your Web 3 tokens today."
+        title="ECommerce-UI"
+        description="Next.js + React.js + Tailwind CSS"
         image="/images/seo_logo.png"
       />
       <div className="w-full">{children}</div>

@@ -8,22 +8,16 @@ import exploreList from "./data.json"
 const DesktopExplore = () => {
   const { pathname } = useRouter()
 
-  const isFundPage = pathname.includes("/fund")
-  const isDamianPage = pathname.includes("/damian")
-  const isWhyVersePage = pathname.includes("/whyverse")
-  const isHowFundPage = pathname.includes("/howfund")
-  const isFAQPage = pathname.includes("/faq")
-  const isContactUsPage = pathname.includes("/contactus")
+  const isProductPage = pathname.includes("/product")
+  const isCartPage = pathname.includes("/cart")
+  const isHomePage = pathname.includes("/home")
 
   const menuText = () => {
-    if (isFundPage) return "The Fund"
-    if (isDamianPage) return "Damian"
-    if (isWhyVersePage) return "Why Financial Verse"
-    if (isHowFundPage) return "How the Fund Works"
-    if (isFAQPage) return "FAQ"
-    if (isContactUsPage) return "Contact Us"
+    if (isProductPage) return "Prodct Detail"
+    if (isCartPage) return "Cart"
+    if (isHomePage) return "Home"
 
-    return "Menu"
+    return "Home"
   }
 
   return (
@@ -61,6 +55,7 @@ const DesktopExplore = () => {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -10 }}
                 transition={{ delay: 0.05 * (i + 1), duration: 0.1 }}
+                className="w-full"
               >
                 {item.label}
               </motion.div>

@@ -66,9 +66,9 @@ function Input({
       </div>
 
       {isFullyHooked && fieldError && fieldError?.message && (
-        <p className="text-red-600 font-madeoutersans text-[10px]">
+        <pre className="text-red-600 font-poppins text-[10px] leading-[120%] pt-[5px]">
           {fieldError?.message as string}
-        </p>
+        </pre>
       )}
     </label>
   )
