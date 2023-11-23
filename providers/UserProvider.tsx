@@ -1,8 +1,8 @@
 import React, { createContext, useContext, useEffect, useMemo, useState } from "react"
 import { useLocalStorage } from "usehooks-ts"
-import userLogin from "../lib/fakestore/userLogin"
 import { useRouter } from "next/router"
-import userRegister from "../lib/fakestore/userRegister"
+import { toast } from "react-toastify"
+import { userRegister, userLogin } from "../lib/firebase"
 
 const UserContext = createContext(null)
 
@@ -17,29 +17,37 @@ const UserProvider = ({ children }) => {
   const [userEmail, setUserEmail] = useState("")
   const [phoneNumber, setPhoneNumber] = useState("")
 
+  const initaialize = () => {
+    setUserName("")
+    setUserPassword("")
+    setUserEmail("")
+    setFirstName("")
+    setLastName("")
+    setPhoneNumber("")
+  }
+  
   const login = async () => {
-    const response = await userLogin(userName, userPassword)
+    const response: any = await userLogin(userEmail, userPassword)
     if(response.error) return
 
     setUserToken(response)
+    setUserId(response.user.uid)
+    initaialize()
     router.push('/home')
   }
 
   const register = async () => {
-      const response = await userRegister(userName, userPassword, userEmail, firstName, lastName, phoneNumber)
+    const response: any = await userRegister(userName, userPassword, userEmail, firstName, lastName, phoneNumber)
 
-      if(response.err) return
+    if(response?.error) {
+      return
+    }
 
-      setUserId(response)
-
-      setUserName("")
-      setUserPassword("")
-      router.push('/signin')
+    setUserId(response)
+    initaialize()
+    toast.success("Please, check your email box to verify your email")
+    router.push('/signin')
   }
-
-  useEffect(() => {
-    setUserId(9)
-  }, [])
 
   const value = useMemo(
     () => ({

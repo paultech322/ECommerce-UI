@@ -7,7 +7,7 @@ import { useUserProvider } from "../../../../providers/UserProvider"
 
 const InputFields = () => {
   const [loading, setLoading] = useState(false)
-  const { userName, userPassword, setUserName, setUserPassword, login } = useUserProvider()
+  const { userEmail, userPassword, setUserEmail, setUserPassword, login } = useUserProvider()
 
   const submitInformation = async () => {
     setLoading(true)
@@ -27,11 +27,11 @@ const InputFields = () => {
     >
       <div className="flex flex-col">
         <TextInput
-          label="User Name"
-          value={userName}
-          onChange={setUserName}
-          placeholder="Enter your username"
-          id="username"
+          label="Email Address"
+          value={userEmail}
+          onChange={setUserEmail}
+          placeholder="Enter your email"
+          id="useremail"
           hookToForm
         />
       </div>

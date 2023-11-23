@@ -1,11 +1,13 @@
 import Media from "../../../../shared/Media"
 import FadeInWhenVisible from "../../../FadeInWhenVisible"
-import Content from "../../../Layout/Content"
-import WhyVerseDetail from "./WhyVerseDetail"
 import useIsMobile from "../../../../hooks/useIsMobile"
+import { useProduct } from "../../../../providers/ProductProvider"
+import CartCard from "../CartCard"
+import Loading from "../../../Loading"
 
 const CartList = () => {
   const isMobile = useIsMobile()
+  const { carts } = useProduct()
 
   return (
     <div
@@ -31,15 +33,31 @@ const CartList = () => {
             w-[70px] h-[109px]"
         />
       </div>
-      <WhyVerseDetail />
-      <FadeInWhenVisible>
-        <Content
-          className="relative z-[10] 
-          md:pb-[120px] lg:pb-[160px] xl:pb-[200px]"
-        >
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-y-[40px]" data-aos="fade-up" />
-        </Content>
-      </FadeInWhenVisible>
+      <div
+        className="md:w-[768px] lg:w-[1024px] xl:w-[1280px]
+                py-[60px] px-[20px]
+                mx-[20px] md:mx-0
+                shadow-[0px_8px_8px_2px_#1e6cd826] dark:shadow-[0px_8px_8px_2px_#1B1B1C]
+                xl:translate-y-[-120px] md:translate-y-[-96px] md:translate-y-[-72px]
+                translate-y-[-50px]
+                rounded-[10px] md:rounded-[20px]
+                bg-white dark:bg-[#1A2629] relative"
+      >
+        <FadeInWhenVisible>
+          <div
+            className="grid grid-cols-1 md:grid-cols-3 
+        gap-y-[20px] md:gap-y-[40px]"
+          >
+            {carts.length ? (
+              carts.map((cart) => <CartCard data={cart} key={cart.id} />)
+            ) : (
+              <div className="col-span-3 flex justify-center xl:py-[50px] lg:py-[40px] md:py-[30px]">
+                <Loading type="spinningBubbles" color="#73b3c2" size={100} />
+              </div>
+            )}
+          </div>
+        </FadeInWhenVisible>
+      </div>
     </div>
   )
 }

@@ -38,7 +38,7 @@ const ProductList = () => {
                   translate-y-[-50px]
                   relative"
       >
-        <FadeInWhenVisible checkInview={false}>
+        <FadeInWhenVisible>
           <Content className="relative z-[10]">
             <div
               className="grid grid-cols-1 md:grid-cols-3 

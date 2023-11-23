@@ -3,8 +3,7 @@ import getProductList from "../lib/fakestore/getProductList"
 import { useRouter } from "next/router"
 import getProductData from "../lib/fakestore/getProductData"
 import { useUserProvider } from "./UserProvider"
-import getCartData from "../lib/fakestore/getCartData"
-import addNewCart from "../lib/fakestore/addNewCart"
+import { getCartData, addNewCart } from "../lib/firebase"
 
 const ProductContext = createContext(null)
 
@@ -26,21 +25,18 @@ const ProductProvider = ({ children }) => {
   }, [pathname, id])
 
   const addCart = async () => {
-    const response = await addNewCart(userId, [...carts, {
-      quantity: 1,
-      productId: productDetail?.id
-    }])
+    const response: any = await addNewCart(userId, productDetail?.id, 1)
 
-    if(response.error) return
+    if(response?.error) return
 
+    await getAllCartData()
     router.push('/cart')
   }
 
-  console.log("ZIAD", carts)
-  
   const getAllCartData = useCallback(async () => {
     setLoading(true)
-    const response = await getCartData(userId)
+    const response: any = await getCartData(userId)
+    if(response?.error) return
     setCarts(response)
     setLoading(false)
   }, [userId])

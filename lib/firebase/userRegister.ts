@@ -1,10 +1,15 @@
-import axios from "axios"
-import { BACKEND_URL } from "../const"
+import { doc, setDoc } from "firebase/firestore"
+import { createUserWithEmailAndPassword, sendEmailVerification } from "firebase/auth"
 import handleTxError from "../handleTxError"
+import { auth, db } from "./db"
 
 const userRegister = async (username, password, email, firstname, lastname, phone) => {
   try {
-    const response = await axios.post(`${BACKEND_URL}/users`, {
+    const credential = await createUserWithEmailAndPassword(auth, email, password)
+
+    await sendEmailVerification(auth.currentUser)
+
+    await setDoc(doc(db, "users", credential.user.uid), {
       email,
       username,
       password,
@@ -24,7 +29,8 @@ const userRegister = async (username, password, email, firstname, lastname, phon
       },
       phone,
     })
-    return response.data.id
+
+    return credential.user.uid as any
   } catch (err) {
     handleTxError(err)
     return { error: err }
