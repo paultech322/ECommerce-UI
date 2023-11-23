@@ -36,7 +36,7 @@ const AboutModule = () => {
               xl:px-[80px] lg:px-[64px] md:px-[48px]
               pt-[25px] px-[20px]
               pb-[205px] samsungS8:pb-[230px] xs:pb-[280px]
-              mx-[15px] md:mx-0
+              mx-[20px] md:mx-0
               shadow-[0px_8px_8px_2px_#1e6cd826] dark:shadow-[0px_8px_8px_2px_#1B1B1C]
               xl:translate-y-[-185px] md:translate-y-[-148px] md:translate-y-[-111px]
               translate-y-[-50px]

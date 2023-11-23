@@ -25,7 +25,7 @@ const ProductDetail = () => {
         />
       </FadeInWhenVisible>
       <FadeInWhenVisible>
-        <pre
+        <p
           className="text-[16px] samsungS8:text-[18px] xs:text-[20px] 
             md:text-[14.4px] lg:text-[19.2px] xl:text-[24px]
             font-poppins_bold text-[#484848] dark:text-white
@@ -33,12 +33,13 @@ const ProductDetail = () => {
         >
           ABOUT <br />
           <span className="text-[#73b3c2]">{productDetail?.title}</span>
-        </pre>
+        </p>
       </FadeInWhenVisible>
-      <FadeInWhenVisible className="w-[70%]">
+      <FadeInWhenVisible className="md:w-[70%]">
         <p
           className="text-[11px] samsungS8:text-[13px] xs:text-[15px]
-            md:text-[10.8px] lg:text-[14.4px] xl:text-[18px]
+            md:text-[10.8px] lg:text-[14.4px] xl:text-[18px] 
+            md:pt-0 pt-[10px]
             font-poppins text-[#484848] dark:text-white"
         >
           <span className="text-[#73b3c2] font-poppins_bold">Category: </span>{" "}
@@ -64,10 +65,9 @@ const ProductDetail = () => {
         <Button
           id="product-detail"
           className="cursor-pointer
-          font-poppins_semibold mt-[20px]
-          md:text-[14px]
+          font-poppins_semibold mt-[20px] text-[14px]
           !rounded-full bg-[#54B3C3]
-          lg:w-[120px] aspect-[120/35] md:w-[90px]"
+          lg:w-[120px] aspect-[120/35] w-[90px]"
           onClick={addCart}
         >
           Add Cart
