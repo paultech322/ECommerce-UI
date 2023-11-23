@@ -12,25 +12,23 @@ const HeroModule = () => {
     >
       <div
         className="w-screen relative
-              bg-[url('/images/HowFund/d_bg.png')]
-              bg-cover
-              bg-no-repeat
-              bg-center
-              flex justify-center"
+              bg-[url('/images/Home/d_bg.png')]
+              bg-cover bg-no-repeat
+              bg-center flex justify-center"
       >
         {isMobile ? (
           <>
             <Media
               type="image"
-              link="/images/HowFund/top_dot_bg.png"
-              blurLink="/images/HowFund/top_dot_bg.png"
+              link="/images/Home/top_dot_bg.png"
+              blurLink="/images/Home/top_dot_bg.png"
               containerClasses="w-[110px] h-[97px]
                   !absolute left-[0px] top-[-70px]"
             />
             <Media
               type="image"
-              link="/images/HowFund/bottom_dot_bg.png"
-              blurLink="/images/HowFund/bottom_dot_bg.png"
+              link="/images/Home/bottom_dot_bg.png"
+              blurLink="/images/Home/bottom_dot_bg.png"
               containerClasses="w-[56px] h-[109px]
                   right-0 bottom-[-60px] !absolute"
             />
@@ -39,8 +37,8 @@ const HeroModule = () => {
           <div className="absolute right-0 top-[5px]">
             <Media
               type="image"
-              link="/images/HowFund/d_top_dot.png"
-              blurLink="/images/HowFund/d_top_dot.png"
+              link="/images/Home/d_top_dot.png"
+              blurLink="/images/Home/d_top_dot.png"
               containerClasses="xl:w-[202px] xl:h-[478px]
             lg:w-[161.6px] lg:h-[382.4px]
             md:w-[121.2px] md:h-[286.8px]"

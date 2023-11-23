@@ -5,8 +5,8 @@ import SignInForm from "./SignInForm"
 const SignInPage = () => (
   <Layout type="base">
     <div
-      className={`dark:bg-[url('/images/Landing/Hero/d_invest_bg.png')]
-      bg-[url('/images/Landing/Hero/d_invest_bg.png')]
+      className={`dark:bg-[url('/images/Auth/Hero/d_invest_bg.png')]
+      bg-[url('/images/Auth/Hero/d_invest_bg.png')]
       flex justify-center items-center
       min-h-screen w-screen pt-[98px]
       bg-[bottom_center]

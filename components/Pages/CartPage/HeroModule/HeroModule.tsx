@@ -12,7 +12,7 @@ const HeroModule = () => {
     >
       <div
         className="w-screen relative
-        bg-[url('/images/WhyVerse/m_bg.png')] md:bg-[url('/images/WhyVerse/d_bg.png')]
+        bg-[url('/images/Cart/m_bg.png')] md:bg-[url('/images/Cart/d_bg.png')]
         bg-cover
         bg-no-repeat
         bg-center
@@ -22,15 +22,15 @@ const HeroModule = () => {
           <>
             <Media
               type="image"
-              link="/images/WhyVerse/top_dot_bg.png"
-              blurLink="/images/WhyVerse/top_dot_bg.png"
+              link="/images/Cart/top_dot_bg.png"
+              blurLink="/images/Cart/top_dot_bg.png"
               containerClasses="w-[110px] h-[97px]
                 !absolute left-[0px] top-[-70px]"
             />
             <Media
               type="image"
-              link="/images/WhyVerse/bottom_dot_bg.png"
-              blurLink="/images/WhyVerse/bottom_dot_bg.png"
+              link="/images/Cart/bottom_dot_bg.png"
+              blurLink="/images/Cart/bottom_dot_bg.png"
               containerClasses="w-[56px] h-[109px]
                 right-0 bottom-[-60px] !absolute"
             />
@@ -39,8 +39,8 @@ const HeroModule = () => {
           <div className="absolute right-0 top-[5px]">
             <Media
               type="image"
-              link="/images/WhyVerse/d_top_dot.png"
-              blurLink="/images/WhyVerse/d_top_dot.png"
+              link="/images/Cart/d_top_dot.png"
+              blurLink="/images/Cart/d_top_dot.png"
               containerClasses="xl:w-[202px] xl:h-[478px]
           lg:w-[161.6px] lg:h-[382.4px]
           md:w-[121.2px] md:h-[286.8px]"

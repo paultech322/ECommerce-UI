@@ -12,7 +12,7 @@ const HeroModule = () => {
     >
       <div
         className="w-screen relative
-              bg-[url('/images/Damian/d_bg.png')]
+              bg-[url('/images/ProductDetail/d_bg.png')]
               bg-cover
               bg-no-repeat
               bg-center
@@ -22,15 +22,15 @@ const HeroModule = () => {
           <>
             <Media
               type="image"
-              link="/images/Damian/top_dot_bg.png"
-              blurLink="/images/Damian/top_dot_bg.png"
+              link="/images/ProductDetail/top_dot_bg.png"
+              blurLink="/images/ProductDetail/top_dot_bg.png"
               containerClasses="w-[110px] h-[97px]
                   !absolute left-[0px] top-[-70px]"
             />
             <Media
               type="image"
-              link="/images/Damian/bottom_dot_bg.png"
-              blurLink="/images/Damian/bottom_dot_bg.png"
+              link="/images/ProductDetail/bottom_dot_bg.png"
+              blurLink="/images/ProductDetail/bottom_dot_bg.png"
               containerClasses="w-[56px] h-[109px]
                   right-0 bottom-[-60px] !absolute"
             />
@@ -39,8 +39,8 @@ const HeroModule = () => {
           <div className="absolute right-0 top-[5px]">
             <Media
               type="image"
-              link="/images/Damian/d_top_dot.png"
-              blurLink="/images/Damian/d_top_dot.png"
+              link="/images/ProductDetail/d_top_dot.png"
+              blurLink="/images/ProductDetail/d_top_dot.png"
               containerClasses="xl:w-[202px] xl:h-[478px]
           lg:w-[161.6px] lg:h-[382.4px]
           md:w-[121.2px] md:h-[286.8px]"
@@ -55,8 +55,7 @@ const HeroModule = () => {
         >
           <p
             className="font-poppins_bold
-            text-[30px]
-            xl:text-[64px] lg:text-[51.2px] md:text-[38.4px]
+            text-[30px] xl:text-[64px] lg:text-[51.2px] md:text-[38.4px]
             text-white leading-[100%]"
             data-aos="fade-up"
           >

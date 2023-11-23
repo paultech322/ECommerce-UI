@@ -21,8 +21,16 @@ const AboutModule = () => {
       >
         <Media
           type="image"
-          link={isMobile ? "/images/Damian/bottom_dot.png" : "/images/Damian/d_bottom_dot.png"}
-          blurLink={isMobile ? "/images/Damian/bottom_dot.png" : "/images/Damian/d_bottom_dot.png"}
+          link={
+            isMobile
+              ? "/images/ProductDetail/bottom_dot.png"
+              : "/images/ProductDetail/d_bottom_dot.png"
+          }
+          blurLink={
+            isMobile
+              ? "/images/ProductDetail/bottom_dot.png"
+              : "/images/ProductDetail/d_bottom_dot.png"
+          }
           containerClasses="xl:w-[187px] xl:h-[69px]
           lg:w-[149.6px] lg:w-[55.2px]
           md:w-[112.2px] md:h-[41.4px]

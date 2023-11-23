@@ -23,10 +23,8 @@ const CartList = () => {
       >
         <Media
           type="image"
-          link={isMobile ? "/images/WhyVerse/bottom_dot.png" : "/images/WhyVerse/d_bottom_dot.png"}
-          blurLink={
-            isMobile ? "/images/WhyVerse/bottom_dot.png" : "/images/WhyVerse/d_bottom_dot.png"
-          }
+          link={isMobile ? "/images/Cart/bottom_dot.png" : "/images/Cart/d_bottom_dot.png"}
+          blurLink={isMobile ? "/images/Cart/bottom_dot.png" : "/images/Cart/d_bottom_dot.png"}
           containerClasses="xl:w-[187px] xl:h-[69px]
             lg:w-[149.6px] lg:w-[55.2px]
             md:w-[112.2px] md:h-[41.4px]
