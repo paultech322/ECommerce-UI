@@ -32,11 +32,11 @@ function Modal({
       `}
       onClick={async (e) => (e.target === e.currentTarget && onClose ? await onClose() : () => {})}
     >
-      <div className={`mt-[50px] bg-white relative ${containerClassName || ""}`}>
+      <div className={`bg-white relative ${containerClassName || ""}`}>
         {showCloseButton && (
           <div
             className={`absolute 
-              top-[5px] right-[5px] xl:top-[15px] xl:right-[15px] 
+              top-[5px] right-[5px] md:top-[10px] md:right-[10px] 
               w-6 h-6 rounded-full cursor-pointer
               text-black dark:text-white
               flex justify-center items-center z-[5] ${closeButtonClassName || ""}`}

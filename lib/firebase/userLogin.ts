@@ -1,7 +1,8 @@
 import { signInWithEmailAndPassword } from "firebase/auth"
 import { toast } from "react-toastify"
+import { doc, getDoc } from "firebase/firestore"
 import handleTxError from "../handleTxError"
-import { auth } from "./db"
+import { auth, db } from "./db"
 
 const userLogin = async (usermail, password) => {
   try {
@@ -11,7 +12,13 @@ const userLogin = async (usermail, password) => {
       toast.error("Email is not verified")
       return { error: "Email is not verifie" }
     }
-    return credential
+
+    const user = await getDoc(doc(db, "users", credential.user.uid))
+
+    return {
+      id: user.id,
+      ...user.data(),
+    }
   } catch (err) {
     handleTxError(err)
     return { error: err }

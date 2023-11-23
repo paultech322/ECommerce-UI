@@ -1,5 +1,10 @@
 import CartPage from "../../components/Pages/CartPage"
+import BillingProvider from "../../providers/BillProvider"
 
-const Cart = () => <CartPage />
+const Cart = () => (
+  <BillingProvider>
+    <CartPage />
+  </BillingProvider>
+)
 
 export default Cart

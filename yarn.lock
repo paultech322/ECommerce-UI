@@ -1855,6 +1855,18 @@
   resolved "https://registry.yarnpkg.com/@stripe/crypto/-/crypto-0.0.4.tgz#51dbcb3750c75a6b8a6c8775381af82367359146"
   integrity sha512-gcD/aG0N90ZrNVppWYf9ADPECptw6PVtF67VIeaFP7fhgd2NvNx8erkzlcvk3VIVSY+bZ6YGX7c7cASoySX74Q==
 
+"@stripe/react-stripe-js@^2.4.0":
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/@stripe/react-stripe-js/-/react-stripe-js-2.4.0.tgz#b69d383a2b13e1104c5766695e7a865899cc84fb"
+  integrity sha512-1jVQEL3OuhuzNlf4OdfqovHt+MkWh8Uh8xpLxx/xUFUDdF+7/kDOrGKy+xJO3WLCfZUL7NAy+/ypwXbbYZi0tg==
+  dependencies:
+    prop-types "^15.7.2"
+
+"@stripe/stripe-js@^2.2.0":
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/@stripe/stripe-js/-/stripe-js-2.2.0.tgz#d5eeeae2efa5a9167fd74a047eceef8be3281b55"
+  integrity sha512-YyXQbsXvnNRJ6MofFhCLIQ4W7UpfkfSOQhjIaHEiCMBv3IBxhzugXiYNNzceGTK/7DL31v7HtTnkJ+FI+6AIow==
+
 "@swc/helpers@0.4.11":
   version "0.4.11"
   resolved "https://registry.yarnpkg.com/@swc/helpers/-/helpers-0.4.11.tgz#db23a376761b3d31c26502122f349a21b592c8de"
@@ -6905,7 +6917,7 @@ process@^0.11.10:
   resolved "https://registry.yarnpkg.com/process/-/process-0.11.10.tgz#7332300e840161bda3e69a1d1d91a7d4bc16f182"
   integrity sha512-cdGef/drWFoydD1JsMzuFf8100nZl+GT+yacc2bEced5f9Rjk4z+WtFUTBu9PhOi9j/jfmBPu0mMEY4wIdAF8A==
 
-prop-types@^15.5.8, prop-types@^15.6.0, prop-types@^15.6.2, prop-types@^15.8.1:
+prop-types@^15.5.8, prop-types@^15.6.0, prop-types@^15.6.2, prop-types@^15.7.2, prop-types@^15.8.1:
   version "15.8.1"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.8.1.tgz#67d87bf1a694f48435cf332c24af10214a3140b5"
   integrity sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg==

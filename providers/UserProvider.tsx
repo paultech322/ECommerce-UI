@@ -3,6 +3,7 @@ import { useLocalStorage } from "usehooks-ts"
 import { useRouter } from "next/router"
 import { toast } from "react-toastify"
 import { userRegister, userLogin } from "../lib/firebase"
+import getUserData from "../lib/firebase/getUserData"
 
 const UserContext = createContext(null)
 
@@ -31,7 +32,7 @@ const UserProvider = ({ children }) => {
     if(response.error) return
 
     setUserToken(response)
-    setUserId(response.user.uid)
+    setUserId(response.id)
     initaialize()
     router.push('/home')
   }
@@ -48,6 +49,17 @@ const UserProvider = ({ children }) => {
     toast.success("Please, check your email box to verify your email")
     router.push('/signin')
   }
+
+  useEffect(() => {
+    const init = async () => {
+     const response = await getUserData(userId)
+     setUserToken(response)
+    }
+
+    if (!userId) return
+
+    init()
+  }, [userId])
 
   const value = useMemo(
     () => ({

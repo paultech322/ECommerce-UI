@@ -1,33 +1,9 @@
-import { useState } from "react"
-import Button from "../../../../shared/Button"
 import Media from "../../../../shared/Media"
 import useCartData from "../../../../hooks/useCartData"
-import TextInput from "../../../TextInput"
-import Form from "../../../../shared/Form"
-import { validation } from "./validation"
-import { useProduct } from "../../../../providers/ProductProvider"
-import { removeCart, updateQuantity } from "../../../../lib/firebase"
+import Buttons from "../Buttons/Buttons"
 
 const CartCard = ({ data }) => {
   const { imageUri, title, price } = useCartData(data?.productId)
-  const [quantity, setQuantity] = useState(data?.quantity)
-  const [isUpdatingQuantity, setIsUpdatingQuantity] = useState(false)
-  const [isRemovingCart, setIsRemovingCart] = useState(false)
-  const { getAllCartData } = useProduct()
-
-  const updateQuantityAmount = async () => {
-    setIsUpdatingQuantity(true)
-    await updateQuantity(data?.id, quantity)
-    await getAllCartData()
-    setIsUpdatingQuantity(false)
-  }
-
-  const remove = async () => {
-    setIsRemovingCart(true)
-    await removeCart(data?.id)
-    await getAllCartData()
-    setIsRemovingCart(false)
-  }
 
   return (
     <div className="flex justify-center col-span-1">
@@ -91,56 +67,7 @@ const CartCard = ({ data }) => {
           className="flex-grow flex items-end justify-end w-full
         gap-x-[10px]"
         >
-          <Form
-            onSubmit={updateQuantityAmount}
-            validationSchema={validation}
-            className="w-full flex flex-col gap-y-[20px] mt-[30px]"
-          >
-            <TextInput
-              label="Quantity"
-              type="number"
-              value={quantity}
-              onChange={setQuantity}
-              placeholder="Input Quantity Amount"
-              id="quantity"
-              hookToForm
-            />
-            <div
-              className="w-full flex flex-col  lg:flex-row gap-[10px]
-            items-start lg:items-center"
-            >
-              <Button
-                id="product-update"
-                type="submit"
-                className={`cursor-pointer
-                font-poppins_semibold text-[14px]
-                ${
-                  isUpdatingQuantity
-                    ? "bg-[lightgray] text-[white] cursor-not-allowed"
-                    : "bg-[#54B3C3] text-[white]"
-                }
-                !rounded-full bg-[#54B3C3]
-                lg:w-[170px] aspect-[170/35] w-[140px]`}
-              >
-                Update Quantity
-              </Button>
-              <Button
-                id="product-remove"
-                className={`cursor-pointer
-                font-poppins_semibold :text-[14px]
-                ${
-                  isRemovingCart
-                    ? "bg-[lightgray] text-[white] cursor-not-allowed"
-                    : "bg-[#b50808] text-[white]"
-                }
-                !rounded-full
-                lg:w-[120px] aspect-[120/35] w-[90px]`}
-                onClick={remove}
-              >
-                Remove
-              </Button>
-            </div>
-          </Form>
+          <Buttons data={data} amount={parseFloat(price) * parseFloat(data?.quantity)} />
         </div>
       </div>
     </div>
