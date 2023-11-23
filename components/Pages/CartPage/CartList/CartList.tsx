@@ -35,7 +35,7 @@ const CartList = () => {
       </div>
       <div
         className="md:w-[768px] lg:w-[1024px] xl:w-[1280px]
-                py-[60px] px-[20px]
+                md:py-[60px] py-[30px] px-[20px]
                 mx-[20px] md:mx-0
                 shadow-[0px_8px_8px_2px_#1e6cd826] dark:shadow-[0px_8px_8px_2px_#1B1B1C]
                 xl:translate-y-[-120px] md:translate-y-[-96px] md:translate-y-[-72px]
