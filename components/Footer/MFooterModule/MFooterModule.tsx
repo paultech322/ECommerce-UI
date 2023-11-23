@@ -1,6 +1,3 @@
-import SocialButtons from "./SocialButtons"
-import InfoLinks from "./InfoLinks"
-import JoinForKit from "./JoinForKit"
 import MFooterLogo from "./MFooterLogo"
 import PagesLinks from "./PagesLinks"
 
@@ -11,12 +8,7 @@ const MFooterModule = () => (
         px-[25px] py-[30px]"
   >
     <MFooterLogo />
-    <JoinForKit />
-    <div className="grid grid-cols-2">
-      <PagesLinks />
-      <InfoLinks />
-    </div>
-    <SocialButtons />
+    <PagesLinks />
     <p
       className="font-poppins
                 border-t-[2px] border-t-[white]
@@ -24,7 +16,7 @@ const MFooterModule = () => (
                 text-[#ffffffcc] text-center
                 py-[20px]"
     >
-      Copyright @FinancialVerse. All Rights Reserved.
+      Copyright @ECommerce UI. All Rights Reserved.
     </p>
   </div>
 )
