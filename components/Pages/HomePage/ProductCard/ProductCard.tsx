@@ -55,17 +55,6 @@ const ProductCard = ({ data }) => {
             lg:w-[120px] aspect-[120/35] md:w-[90px]"
             onClick={() => router.push(`/product/${data.id}`)}
           >
-            Add to cart
-          </Button>
-          <Button
-            id="product-detail"
-            className="cursor-pointer
-            font-poppins_semibold
-            md:text-[14px]
-            !rounded-full bg-[#54B3C3]
-            lg:w-[120px] aspect-[120/35] md:w-[90px]"
-            onClick={() => router.push(`/product/${data.id}`)}
-          >
             Detail
           </Button>
         </div>
