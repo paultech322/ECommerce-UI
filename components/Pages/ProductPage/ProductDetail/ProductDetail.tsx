@@ -63,7 +63,7 @@ const ProductDetail = () => {
           {productDetail?.description}
         </p>
         <Button
-          id="product-detail"
+          id="add-cart"
           className="cursor-pointer
           font-poppins_semibold mt-[20px] text-[14px]
           !rounded-full bg-[#54B3C3]

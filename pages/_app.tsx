@@ -9,6 +9,7 @@ import * as React from "react"
 import { ThemeProvider } from "../providers/ThemeProvider"
 import UserProvider from "../providers/UserProvider"
 import ProductProvider from "../providers/ProductProvider"
+import Wrapper from "../components/Pages/Wrapper"
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -16,7 +17,9 @@ function MyApp({ Component, pageProps }: AppProps) {
       <UserProvider>
         <ProductProvider>
           <SessionProvider>
-            <Component {...pageProps} />
+            <Wrapper>
+              <Component {...pageProps} />
+            </Wrapper>
             <ToastContainer />
           </SessionProvider>
         </ProductProvider>
