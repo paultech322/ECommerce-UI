@@ -62,7 +62,7 @@ const HeroModule = () => {
           >
             My Carts
           </pre>
-          <p
+          <pre
             className="font-poppins
             text-[12.5px] samsungS8:text-[14.5px] xs:text-[16px]
             md:text-[10.8px] lg:text-[14.4px] xl:text-[18px]
@@ -73,7 +73,7 @@ const HeroModule = () => {
             {isMobile
               ? `Lorem ipsum dolor sit amet, consectetur\nadipiscing elit, sed do eiusmod tempor\nincididunt ut labore et dolore magna aliqua.`
               : `Lorem ipsum dolor sit amet, consectetur adipiscing elit,\nsed do eiusmod tempor incididunt ut labore et\ndolore magna aliqua.`}
-          </p>
+          </pre>
         </div>
       </div>
     </div>
