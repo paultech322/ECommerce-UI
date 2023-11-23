@@ -5,12 +5,13 @@ import Input from "../../shared/Input"
 interface TextInputProps {
   label: string
   onChange: any
-  value: string
+  value: any
   placeholder: string
   id: string
   className?: string
-  type?: "single" | "multiple"
+  inputType?: "single" | "multiple"
   hookToForm?: boolean
+  type?: any
 }
 
 const TextInput: FC<TextInputProps> = ({
@@ -20,8 +21,9 @@ const TextInput: FC<TextInputProps> = ({
   placeholder,
   id,
   className,
-  type = "single",
+  inputType = "single",
   hookToForm = false,
+  type,
 }) => (
   <div
     className={`flex flex-col gap-[5px] ${className}
@@ -36,11 +38,12 @@ const TextInput: FC<TextInputProps> = ({
     >
       {label}
     </p>
-    {type === "single" ? (
+    {inputType === "single" ? (
       <Input
         id={id}
         name={id}
         value={value}
+        type={type || "text"}
         onChange={(e) => onChange(e.target.value)}
         className="dark:bg-[#1A2629]
             outline-none
