@@ -5,21 +5,28 @@ import useCartData from "../../../../hooks/useCartData"
 import TextInput from "../../../TextInput"
 import Form from "../../../../shared/Form"
 import { validation } from "./validation"
-import useUpdateQuantity from "../../../../hooks/useUpdateQuantity"
 import { useProduct } from "../../../../providers/ProductProvider"
+import { removeCart, updateQuantity } from "../../../../lib/firebase"
 
 const CartCard = ({ data }) => {
   const { imageUri, title, price } = useCartData(data?.productId)
   const [quantity, setQuantity] = useState(1)
-  const { updateQuantityAmount } = useUpdateQuantity()
-  const [isLoading, setIsLoading] = useState(false)
+  const [isUpdatingQuantity, setIsUpdatingQuantity] = useState(false)
+  const [isRemovingCart, setIsRemovingCart] = useState(false)
   const { getAllCartData } = useProduct()
 
-  const updateQuantity = async () => {
-    setIsLoading(true)
-    await updateQuantityAmount(data?.id, quantity)
+  const updateQuantityAmount = async () => {
+    setIsUpdatingQuantity(true)
+    await updateQuantity(data?.id, quantity)
     await getAllCartData()
-    setIsLoading(false)
+    setIsUpdatingQuantity(false)
+  }
+
+  const remove = async () => {
+    setIsRemovingCart(true)
+    await removeCart(data?.id)
+    await getAllCartData()
+    setIsRemovingCart(false)
   }
 
   return (
@@ -89,9 +96,7 @@ const CartCard = ({ data }) => {
         gap-x-[10px]"
         >
           <Form
-            onSubmit={async () => {
-              updateQuantity()
-            }}
+            onSubmit={updateQuantityAmount}
             validationSchema={validation}
             className="w-full flex flex-col gap-y-[20px] mt-[30px]"
           >
@@ -112,7 +117,7 @@ const CartCard = ({ data }) => {
                 font-poppins_semibold
                 md:text-[14px]
                 ${
-                  isLoading
+                  isUpdatingQuantity
                     ? "bg-[lightgray] text-[white] cursor-not-allowed"
                     : "bg-[#54B3C3] text-[white]"
                 }
@@ -123,11 +128,17 @@ const CartCard = ({ data }) => {
               </Button>
               <Button
                 id="product-remove"
-                className="cursor-pointer
+                className={`cursor-pointer
                 font-poppins_semibold
                 md:text-[14px]
-                !rounded-full bg-[#b50808]
-                lg:w-[120px] aspect-[120/35]"
+                ${
+                  isRemovingCart
+                    ? "bg-[lightgray] text-[white] cursor-not-allowed"
+                    : "bg-[#b50808] text-[white]"
+                }
+                !rounded-full
+                lg:w-[120px] aspect-[120/35]`}
+                onClick={remove}
               >
                 Remove
               </Button>
