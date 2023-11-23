@@ -19,7 +19,8 @@ const ProductProvider = ({ children }) => {
   const [productDetail, setProductDetail] = useState(null)
   const [loading, setLoading] = useState(false)
   const [carts, setCarts] = useState([])
-  
+  const [selectedCart, setSelectedCart] = useState(null)
+
   const productId = useMemo(() => {
     if(isProductPage) return id  
   }, [pathname, id])
@@ -75,7 +76,9 @@ const ProductProvider = ({ children }) => {
       getAllCartData,
       carts,
       loading,
-      addCart
+      addCart,
+      selectedCart,
+      setSelectedCart
     }),
     [
       products,
@@ -84,7 +87,9 @@ const ProductProvider = ({ children }) => {
       carts,
       productDetail,
       loading,
-      addCart
+      addCart,
+      selectedCart,
+      setSelectedCart
     ],
   )
 

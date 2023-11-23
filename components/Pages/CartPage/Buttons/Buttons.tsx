@@ -12,7 +12,7 @@ const Buttons = ({ data, amount }) => {
   const [isUpdatingQuantity, setIsUpdatingQuantity] = useState(false)
   const [isRemovingCart, setIsRemovingCart] = useState(false)
 
-  const { getAllCartData } = useProduct()
+  const { getAllCartData, setSelectedCart } = useProduct()
   const { isOpenCheckOut, setIsOpenCheckOut, setPayAmount } = useBilling()
 
   const updateQuantityAmount = async () => {
@@ -87,6 +87,7 @@ const Buttons = ({ data, amount }) => {
               !rounded-full
               w-full h-[35px]`}
         onClick={() => {
+          setSelectedCart(data)
           setPayAmount(amount)
           setIsOpenCheckOut(!isOpenCheckOut)
         }}

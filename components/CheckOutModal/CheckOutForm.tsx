@@ -2,11 +2,14 @@ import { useElements, useStripe, PaymentElement } from "@stripe/react-stripe-js"
 import { toast } from "react-toastify"
 import { useState } from "react"
 import { useBilling } from "../../providers/BillProvider"
+import { useProduct } from "../../providers/ProductProvider"
+import { removeCart } from "../../lib/firebase"
 
 const CheckOutForm = () => {
   const stripe = useStripe()
   const elements = useElements()
 
+  const { selectedCart } = useProduct()
   const { clientSecret } = useBilling()
   const [isLoading, setIsLoading] = useState(false)
 
@@ -15,6 +18,8 @@ const CheckOutForm = () => {
 
     setIsLoading(true)
     if (!stripe || !elements) return
+
+    await removeCart(selectedCart?.id)
 
     const { error } = await stripe.confirmPayment({
       elements,
