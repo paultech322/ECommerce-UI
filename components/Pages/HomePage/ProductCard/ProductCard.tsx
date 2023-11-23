@@ -7,7 +7,7 @@ const ProductCard = ({ data }) => {
 
   return (
     <div
-      className="flex flex-col items-start w-full
+      className="flex flex-col items-start
             p-[15px] md:p-[18px] lg:p-[24px] xl:p-[30px]
             rounded-[10px] md:rounded-[10px]
             bg-white dark:bg-[#1A2629] 
