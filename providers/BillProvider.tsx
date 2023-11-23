@@ -15,13 +15,13 @@ const BillingProvider = ({ children }) => {
     theme: 'stripe',
 
     variables: {
-        colorPrimary: '#0570de',
-        colorBackground: "white",
-        colorText: "black",
-        colorDanger: '#df1b41',
-        fontFamily: 'Montserrat !important',
-        fontSizeBase : '20px',
-        borderRadius: '4px',
+      colorPrimary: '#0570de',
+      colorBackground: "#1a2629",
+      colorText: "#73b3c2",
+      colorDanger: '#df1b41',
+      fontFamily: 'Poppins !important',
+      fontSizeBase : '20px',
+      borderRadius: '4px',
     }
 };
   const stripeAccountId = useMemo(() => {
