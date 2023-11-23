@@ -28,7 +28,7 @@ const DesktopMenu = () => {
       md:gap-x-[36px]"
       >
         <Link href="/">
-          <div className="flex items-center gap-x-[10px]">
+          <div className="flex items-center gap-x-[10px] cursor-pointer">
             <p
               className="text-[30px]
               uppercase 

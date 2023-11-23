@@ -60,7 +60,7 @@ const HeroModule = () => {
             text-white leading-[120%]"
             data-aos="fade-up"
           >
-            {isMobile ? `How the Fund Works` : `FakeStore \nProducts`}
+            {isMobile ? `FakeStore Products` : `FakeStore \nProducts`}
           </pre>
           <pre
             className="font-poppins

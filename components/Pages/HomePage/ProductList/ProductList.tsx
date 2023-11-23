@@ -1,6 +1,5 @@
 import Media from "../../../../shared/Media"
 import FadeInWhenVisible from "../../../FadeInWhenVisible"
-import Content from "../../../Layout/Content"
 import useIsMobile from "../../../../hooks/useIsMobile"
 import { useProduct } from "../../../../providers/ProductProvider"
 import ProductCard from "../ProductCard/ProductCard"
@@ -39,20 +38,18 @@ const ProductList = () => {
                   relative"
       >
         <FadeInWhenVisible>
-          <Content className="relative z-[10]">
-            <div
-              className="grid grid-cols-1 md:grid-cols-3 
-            gap-y-[20px] md:gap-y-[40px]"
-            >
-              {products.map((data, i) => (
-                <ProductCard
-                  // eslint-disable-next-line react/no-array-index-key
-                  key={i}
-                  data={data}
-                />
-              ))}
-            </div>
-          </Content>
+          <div
+            className="grid grid-cols-1 md:grid-cols-3 
+          gap-[20px] md:gap-[24px] lg:gap-[32px] xl:gap-[40px]"
+          >
+            {products.map((data, i) => (
+              <ProductCard
+                // eslint-disable-next-line react/no-array-index-key
+                key={i}
+                data={data}
+              />
+            ))}
+          </div>
         </FadeInWhenVisible>
       </div>
     </div>
