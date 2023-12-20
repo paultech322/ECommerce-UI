@@ -57,7 +57,7 @@ const AboutModule = () => {
             <Loading type="spinningBubbles" color="#73b3c2" size={100} />
           </div>
         ) : (
-          <ProductDetail />
+          <ProductDetail/>
         )}
       </div>
     </div>
